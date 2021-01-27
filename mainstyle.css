@@ -3,4 +3,59 @@ body {
     margin: 0px;
     padding: 0px;
   
-  }
+}
+  
+header {
+  background-color:rgba(143, 3, 3, 0.719);
+  color: white;
+  
+  
+}
+
+
+.header-info {
+  display: flex;
+  justify-content:space-around;
+  
+}
+
+.header-info > div {
+  padding: 0.2in;
+  
+
+}
+
+.header-info > div > h1 {
+  text-shadow: teal;
+
+
+}
+
+.blog-creator {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+.blog-creator > label {
+  color: black;
+  font-size: 20px;
+
+}
+
+
+
+section {
+  margin: 0.7in auto;
+  
+  max-width: 5in;
+  min-width: 3in;
+  max-height: 5in;
+}
+
+section > h2 {
+  color: rgba(143, 3, 3, 0.719);
+  
+
+}
+
