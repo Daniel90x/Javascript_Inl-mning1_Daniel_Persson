@@ -51,10 +51,14 @@ section {
   max-width: 5in;
   min-width: 3in;
   max-height: 5in;
+  border:10px red;
+
+  
 }
 
 section > h2 {
   color: rgba(143, 3, 3, 0.719);
+  
   
 
 }
