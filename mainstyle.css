@@ -8,6 +8,7 @@ body {
 header {
   background-color:rgba(143, 3, 3, 0.719);
   color: white;
+  position: sticky;
   
   
 }
@@ -44,7 +45,7 @@ header {
 }
 
 
-
+/*
 section {
   margin: 0.7in auto;
   
@@ -54,12 +55,40 @@ section {
   border:10px red;
 
   
+}*/
+
+
+
+#sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  row-gap: 10px;
+  overflow-y: hidden;
 }
 
-section > h2 {
-  color: rgba(143, 3, 3, 0.719);
+#section {
+  display: block;
+  height: 150px;
+  width: 250px;
+  background-color: red;
+  border:thin solid black;
+}
+
+#section h2{
+  margin-top:1px;
+  height: 20px;
+  overflow: hidden;
   
-  
+}
+
+#section img{
+  border: royalblue;
+
 
 }
 
+#section p2{
+  background-color: green;
+
+
+}

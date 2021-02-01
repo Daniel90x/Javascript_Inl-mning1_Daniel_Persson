@@ -1,42 +1,59 @@
 
 /* 1:
-
+Hade velat skriva något vettigt, men jag har inte fått rätt på det.
 
 
 */
-window.onload = function(){
+document.addEventListener("DOMContentLoaded", onPageload);
 
+function onPageload(){
+    let input_number = document.querySelector("Input-number");
 
+    input_number.oninput = function(){
+        resetSections();
+
+        createSections(parseInt(input_number.value));
     
+    };
+
+
+
 }
 
 
+// Försöker skapa bloginläggens olika delar här nere.
+function createSections(count){ // Parent
 
 
-
-function createSections(count){
+    var count = parseInt(this.value);
     for(var i = 0; i < count; i++){
 
-        var parent = document.querySelector("main");
+       // var section = document.createElement("div");
+       // section.setAttribute("id", "section")
+        //var sectionParent = document.getElementById("sections");
 
+            var parent = document.querySelector("main");
             var child = document.createElement("section");
             var title = document.createElement("h2");
-            var picture = document.createElement("p1");
+            var picture = document.createElement('img'); 
+            img.src =  'img/Blog_Bild.jpg';
             var blogtext = document.createElement("p2");
 
             title.innerHTML = "Title " + (i + 1);
-            picture.innerHTML = "<img src=\'img/Blog_Bild.jpg\'>";
+            //picture.innerHTML = "<img src=\"img/Blog_Bild.jpg\">";
             blogtext.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore harum, quasi dicta ex totam quisquam quo tempore maxime, commodi praesentium eius quod suscipit! Tenetur magnam eligendi amet fugiat adipisci impedit.";
+            title.contentEditable = true; // Gör så att title och blogtext går att ändra...
+            blogtext.contentEditable = true;
 
-            makeEditable(title);
-            makeEditable(blogtext);
 
             child.appendChild(title);
+            child.appendChild(picture);
             child.appendChild(blogtext);
-            parent.appendChild(child);
+
+            sectionParent.appendChild(child);
 
 
-    }
+    };
 
 };
 
@@ -46,29 +63,14 @@ function createSections(count){
 
 
 
-
+// HAr försökt få så att children och parents fungerar, men det har inte blivit bra...
 function resetSections(){
-    var all_sections = document.querySelectorAll("section");
-    for(var i = 0; i < all_sections.length; i++){
-        all_sections[i].remove();
-    }
-};
 
-function turnEditable(elem){
-    elem.onclick = function(event){
-        elem.contentEditable = true;
-        elem.focus();
+    var sectionParent = document.getElementById("sections")
 
+    var sectionChild = sectionParent.childNodes; 
+    for(var i = sectionChildren.length-1; i >= 0; i--){
+        var sectionChild = sectionChildren[i];
+        sectionChild.parentNode.removeChild(sectionChild);
     };
-    elem.onblur = function(event){
-        elem.contentEditable = false;
-
-    };
-
-
 };
-
-
-
-
-
