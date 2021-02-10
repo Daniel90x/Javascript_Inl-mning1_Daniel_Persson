@@ -1,3 +1,4 @@
+"strict mode"; // Används för att göra så att programmet är mer kräsen med din kod, t.ex. den kommer säga emot om det finns variabler med samma namn 
 
 /* 1:
 Hade velat skriva något vettigt, men jag har inte fått rätt på det.
@@ -7,7 +8,7 @@ Hade velat skriva något vettigt, men jag har inte fått rätt på det.
 document.addEventListener("DOMContentLoaded", onPageload);
 
 function onPageload(){
-    let input_number = document.querySelector("Input-number");
+    let input_number = document.querySelector("#input-number");
 
     input_number.oninput = function(){
         resetSections();
@@ -25,19 +26,19 @@ function onPageload(){
 function createSections(count){ // Parent
 
 
-    var count = parseInt(this.value);
-    for(var i = 0; i < count; i++){
+   // let count = parseInt(this.value);
+    for(let i = 0; i < count; i++){
 
-       // var section = document.createElement("div");
+       // let section = document.createElement("div");
        // section.setAttribute("id", "section")
-        //var sectionParent = document.getElementById("sections");
+        //let sectionParent = document.getElementById("sections");
 
-            var parent = document.querySelector("main");
-            var child = document.createElement("section");
-            var title = document.createElement("h2");
-            var picture = document.createElement('img'); 
-            img.src =  'img/Blog_Bild.jpg';
-            var blogtext = document.createElement("p2");
+            let sectionParent = document.querySelector("main");
+            let child = document.createElement("section");             // Använder DOM för att skapa en section
+            let title = document.createElement("h2");                  // Använder DOM för att skapa ett h-element
+            let picture = document.createElement('img');               // Använder DOM för att skapa en plats för en bild
+           // img.src =  'img/Blog_Bild.jpg';
+            let blogtext = document.createElement("p2");               // Använder DOM för att skapa ett p paragraph text, som kan fungera som blogtext
 
             title.innerHTML = "Title " + (i + 1);
             //picture.innerHTML = "<img src=\"img/Blog_Bild.jpg\">";
@@ -66,11 +67,11 @@ function createSections(count){ // Parent
 // HAr försökt få så att children och parents fungerar, men det har inte blivit bra...
 function resetSections(){
 
-    var sectionParent = document.getElementById("sections")
+    let sectionParent = document.getElementById("sections")
 
-    var sectionChild = sectionParent.childNodes; 
-    for(var i = sectionChildren.length-1; i >= 0; i--){
-        var sectionChild = sectionChildren[i];
-        sectionChild.parentNode.removeChild(sectionChild);
+    let sectionChildren = sectionParent.childNodes;            // HAR ÄNDRAT sectionChild till sectionChildren här nere.
+    for(let i = sectionChildren.length-1; i >= 0; i--){
+        let sectionChildren = sectionChildren[i];
+        sectionParent.removeChild(sectionChildren);            //bytade till sectionParent, för det gjorde samma sak...
     };
 };
