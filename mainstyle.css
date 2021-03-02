@@ -45,19 +45,6 @@ header {
 }
 
 
-/*
-section {
-  margin: 0.7in auto;
-  
-  max-width: 5in;
-  min-width: 3in;
-  max-height: 5in;
-  border:10px red;
-
-  
-}*/
-
-
 
 #sections {
   display: grid;
